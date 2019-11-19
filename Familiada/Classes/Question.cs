@@ -12,13 +12,16 @@ namespace Familiada.Classes
         public Question()
         {
             this.Name = string.Empty;
-            this.Answer = new List<Answer>();
+            this.Answers = new List<Answer>();
         }
+
+        //public int Id
+        //{ get; set; }
 
         public string Name
         { get; set; }
 
-        public List<Answer> Answer
+        public List<Answer> Answers
         { get; set; }
 
     }

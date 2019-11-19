@@ -18,5 +18,16 @@ namespace Familiada.Classes
                 return instance;
             }
         }
+        
+
+        public List<Question> data;
+
+        public bool LoadFrom(string FilePath= "pytania.xml")
+        {
+           
+
+
+            return true;
+        }
     }
 }
