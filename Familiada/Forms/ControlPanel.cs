@@ -70,8 +70,7 @@ namespace Familiada
 
         private void treeList1_RowClick(object sender, RowClickEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
-                popupMenu1.ShowPopup(new Point { X = e.X,Y=e.Y});
+
 
             if (!e.Node.HasChildren) return;
 
@@ -95,8 +94,9 @@ namespace Familiada
 
         private void treeList1_MouseUp(object sender, MouseEventArgs e)
         {
-            //if (e.Button == MouseButtons.Right)
-            //    popupMenu1.ShowPopup(e.Location);
+            if (e.Button == MouseButtons.Right)
+                popupMenu1.ShowPopup(new Point { X = MousePosition.X, Y = MousePosition.Y });
+
         }
 
         private void popupMenu1_CloseUp(object sender, EventArgs e)
