@@ -35,17 +35,16 @@
             this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.StartBtn = new System.Windows.Forms.Button();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.bar1 = new DevExpress.XtraBars.Bar();
-            this.bar2 = new DevExpress.XtraBars.Bar();
-            this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.AddQuestion = new DevExpress.XtraBars.BarButtonItem();
             this.AddAnswer = new DevExpress.XtraBars.BarButtonItem();
             this.Delete = new DevExpress.XtraBars.BarButtonItem();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.NextQuestionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeList1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -71,12 +70,16 @@
             this.treeList1.Location = new System.Drawing.Point(12, 12);
             this.treeList1.Name = "treeList1";
             this.treeList1.OptionsBehavior.EditorShowMode = DevExpress.XtraTreeList.TreeListEditorShowMode.DoubleClick;
+            this.treeList1.OptionsSelection.SelectNodesOnRightClick = true;
             this.treeList1.Size = new System.Drawing.Size(305, 565);
             this.treeList1.TabIndex = 0;
             this.treeList1.TreeViewFieldName = "Name";
             this.treeList1.RowClick += new DevExpress.XtraTreeList.RowClickEventHandler(this.treeList1_RowClick);
+            this.treeList1.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeList1_FocusedNodeChanged);
+            this.treeList1.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.treeList1_ValidatingEditor);
             this.treeList1.CellValueChanged += new DevExpress.XtraTreeList.CellValueChangedEventHandler(this.treeList1_CellValueChanged);
-            this.treeList1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeList1_MouseUp);
+            this.treeList1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.treeList1_KeyDown);
+            this.treeList1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.treeList1_MouseClick);
             // 
             // treeListColumn1
             // 
@@ -110,10 +113,6 @@
             // 
             // barManager1
             // 
-            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar1,
-            this.bar2,
-            this.bar3});
             this.barManager1.DockControls.Add(this.barDockControlTop);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
             this.barManager1.DockControls.Add(this.barDockControlLeft);
@@ -123,39 +122,7 @@
             this.AddQuestion,
             this.AddAnswer,
             this.Delete});
-            this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 3;
-            this.barManager1.StatusBar = this.bar3;
-            // 
-            // bar1
-            // 
-            this.bar1.BarName = "Tools";
-            this.bar1.DockCol = 0;
-            this.bar1.DockRow = 1;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar1.Text = "Tools";
-            // 
-            // bar2
-            // 
-            this.bar2.BarName = "Main menu";
-            this.bar2.DockCol = 0;
-            this.bar2.DockRow = 0;
-            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar2.OptionsBar.MultiLine = true;
-            this.bar2.OptionsBar.UseWholeRow = true;
-            this.bar2.Text = "Main menu";
-            // 
-            // bar3
-            // 
-            this.bar3.BarName = "Status bar";
-            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar3.DockCol = 0;
-            this.bar3.DockRow = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar3.OptionsBar.AllowQuickCustomization = false;
-            this.bar3.OptionsBar.DrawDragBorder = false;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Status bar";
             // 
             // barDockControlTop
             // 
@@ -163,31 +130,52 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1349, 50);
+            this.barDockControlTop.Size = new System.Drawing.Size(1349, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 619);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 641);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1349, 22);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1349, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 50);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 569);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 641);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1349, 50);
+            this.barDockControlRight.Location = new System.Drawing.Point(1349, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 569);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 641);
+            // 
+            // AddQuestion
+            // 
+            this.AddQuestion.Caption = "Dodaj pytanie";
+            this.AddQuestion.Id = 0;
+            this.AddQuestion.Name = "AddQuestion";
+            this.AddQuestion.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.AddQuestion_ItemClick);
+            // 
+            // AddAnswer
+            // 
+            this.AddAnswer.Caption = "Dodaj odpowiedź";
+            this.AddAnswer.Id = 1;
+            this.AddAnswer.Name = "AddAnswer";
+            this.AddAnswer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.AddAnswer_ItemClick);
+            // 
+            // Delete
+            // 
+            this.Delete.Caption = "Usuń";
+            this.Delete.Id = 2;
+            this.Delete.Name = "Delete";
+            this.Delete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Delete_ItemClick);
             // 
             // popupMenu1
             // 
@@ -197,30 +185,34 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.Delete)});
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
+            this.popupMenu1.CloseUp += new System.EventHandler(this.popupMenu1_CloseUp);
             // 
-            // AddQuestion
+            // label1
             // 
-            this.AddQuestion.Caption = "Dodaj pytanie";
-            this.AddQuestion.Id = 0;
-            this.AddQuestion.Name = "AddQuestion";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(323, 552);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(181, 25);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Następne pytanie:";
             // 
-            // AddAnswer
+            // NextQuestionLabel
             // 
-            this.AddAnswer.Caption = "Dodaj odpowiedź";
-            this.AddAnswer.Id = 1;
-            this.AddAnswer.Name = "AddAnswer";
-            // 
-            // Delete
-            // 
-            this.Delete.Caption = "Usuń";
-            this.Delete.Id = 2;
-            this.Delete.Name = "Delete";
+            this.NextQuestionLabel.AutoSize = true;
+            this.NextQuestionLabel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NextQuestionLabel.Location = new System.Drawing.Point(323, 583);
+            this.NextQuestionLabel.Name = "NextQuestionLabel";
+            this.NextQuestionLabel.Size = new System.Drawing.Size(0, 19);
+            this.NextQuestionLabel.TabIndex = 12;
             // 
             // ControlPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1349, 641);
+            this.Controls.Add(this.NextQuestionLabel);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.StartBtn);
             this.Controls.Add(this.treeList1);
             this.Controls.Add(this.barDockControlLeft);
@@ -247,9 +239,6 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn2;
         private System.Windows.Forms.Button StartBtn;
         private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.Bar bar1;
-        private DevExpress.XtraBars.Bar bar2;
-        private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
@@ -258,5 +247,7 @@
         private DevExpress.XtraBars.BarButtonItem AddAnswer;
         private DevExpress.XtraBars.BarButtonItem Delete;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label NextQuestionLabel;
     }
 }
