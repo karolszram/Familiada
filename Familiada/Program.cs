@@ -20,7 +20,7 @@ namespace Familiada
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
-            Application.Run(new ControlPanel());
+            Application.Run(ControlPanel.Instance);
         }
     }
 }
