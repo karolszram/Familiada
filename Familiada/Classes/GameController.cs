@@ -31,7 +31,7 @@ namespace Familiada.Classes
                     ControlPanel.Instance.CurrentQuestionLbl.Text = "-";
                     Game.Instance.CurrentGameQuestionLbl.Text = "-";
                 }
-                ControlPanel.Instance.CurrentQuestionLbl.Text = CurrentQuestionNode.GetDisplayText(0);
+                ControlPanel.Instance.CurrentQuestionLbl.Text = CurrentQuestionNode.Tag +". "+ CurrentQuestionNode.GetDisplayText(0);
                 Game.Instance.CurrentGameQuestionLbl.Text = CurrentQuestionNode.GetDisplayText(0);
 
             }
@@ -44,7 +44,22 @@ namespace Familiada.Classes
             set { _currentQuestionNode = value;
                     UpdateCurrentLabel();
             } }
-        public int PointsBeforeAdd { get; set; } = 0;
+        //public int PointsBeforeAdd { get; set; } = 0;
+
+
+        private int _pointsBeforeAdd;
+        public int PointsBeforeAdd
+        {
+
+            get { return _pointsBeforeAdd; }
+            set
+            {
+                _pointsBeforeAdd = value;
+                ControlPanel.Instance.CurrentPointsLbl.Text = value.ToString();
+                Game.Instance.CurrentPointsLBL.Text = value.ToString();
+            }
+        } 
+
         private int _pointsLeft;
         public int PointsLeft
         {
@@ -73,6 +88,7 @@ namespace Familiada.Classes
         public void GameStart()
         {
 
+            Game.Instance.ClearBeforeNext();
             CurrentQuestionNode = NextQUestionNode;
 
             if (!NextQUestionNode.HasChildren)  return;
@@ -83,6 +99,7 @@ namespace Familiada.Classes
 
 
             ControlPanel.Instance.SelectRandomNextQuestion();
+            
 
             for(int i=1; i<=CurrentQuestionNode.Nodes.Count(); i++ )
             {

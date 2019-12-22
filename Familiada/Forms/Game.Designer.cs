@@ -49,6 +49,7 @@
             this.Pkt6 = new System.Windows.Forms.Label();
             this.LeftPoints = new System.Windows.Forms.Label();
             this.RightPoints = new System.Windows.Forms.Label();
+            this.CurrentPointsLBL = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Wrong1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Wrong2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Wrong3)).BeginInit();
@@ -294,11 +295,23 @@
             this.RightPoints.TabIndex = 20;
             this.RightPoints.Text = "0";
             // 
+            // CurrentPointsLBL
+            // 
+            this.CurrentPointsLBL.AutoSize = true;
+            this.CurrentPointsLBL.Font = new System.Drawing.Font("Tahoma", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrentPointsLBL.ForeColor = System.Drawing.Color.Yellow;
+            this.CurrentPointsLBL.Location = new System.Drawing.Point(796, 202);
+            this.CurrentPointsLBL.Name = "CurrentPointsLBL";
+            this.CurrentPointsLBL.Size = new System.Drawing.Size(68, 77);
+            this.CurrentPointsLBL.TabIndex = 21;
+            this.CurrentPointsLBL.Text = "0";
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1918, 1048);
+            this.Controls.Add(this.CurrentPointsLBL);
             this.Controls.Add(this.RightPoints);
             this.Controls.Add(this.LeftPoints);
             this.Controls.Add(this.Pkt6);
@@ -357,5 +370,6 @@
         public System.Windows.Forms.Label Pkt6;
         public System.Windows.Forms.Label LeftPoints;
         public System.Windows.Forms.Label RightPoints;
+        public System.Windows.Forms.Label CurrentPointsLBL;
     }
 }

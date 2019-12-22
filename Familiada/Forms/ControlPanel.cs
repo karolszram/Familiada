@@ -39,15 +39,12 @@ namespace Familiada
             try
             {
                 treeList1.ImportFromXml("pytania.xml");
-                //treeList1.BeginSort();
-                //treeListColumn2.SortOrder = SortOrder.Descending;
-                //treeList1.EndSort();
-                //treeList1.Refresh();
             }
             catch
             {
                 ErrorLogLbl.Text = "Problem z odczytaniem pliku pytania.xml";
             }
+
             SelectRandomNextQuestion();
 
         }
@@ -74,12 +71,6 @@ namespace Familiada
         private void treeList1_CellValueChanged(object sender, CellValueChangedEventArgs e)
         {
             treeList1.ExportToXml("pytania.xml");
-            //treeList1.BeginSort();
-            //treeListColumn2.SortOrder = SortOrder.Descending;
-            //treeList1.EndSort();
-            //treeList1.Refresh();
-            //treeList1.Update();
-
 
         }
 
@@ -189,7 +180,7 @@ namespace Familiada
             }
             if (e.Node.ParentNode != null)
             {
-                NextQuestionLabel.Text = e.Node.ParentNode.GetDisplayText(0);
+                NextQuestionLabel.Text = e.Node.ParentNode.Tag + ". " + e.Node.ParentNode.GetDisplayText(0);
                 GameController.Instance.NextQUestionNode = e.Node.ParentNode;
                 return;
             }
@@ -198,7 +189,10 @@ namespace Familiada
                 NextQuestionLabel.Text = "Pytanie bez odpowiedzi, wybierz inne";
                 return;
             }
-            NextQuestionLabel.Text =  e.Node.GetDisplayText(0);
+            //if(!string.IsNullOrEmpty(e.Node.Tag.ToString()))
+            //    NextQuestionLabel.Text = e.Node.Tag + ". " + e.Node.GetDisplayText(0);
+
+            NextQuestionLabel.Text = e.Node.GetDisplayText(0);
             GameController.Instance.NextQUestionNode = e.Node;
 
         }
@@ -342,11 +336,15 @@ namespace Familiada
         private void PointsToLeft_Click(object sender, EventArgs e)
         {
             GameController.Instance.PointsLeft += GameController.Instance.PointsBeforeAdd;
+            GameController.Instance.GameStart();
+
         }
 
         private void PointsToRight_Click(object sender, EventArgs e)
         {
             GameController.Instance.PointsRight += GameController.Instance.PointsBeforeAdd;
+
+            GameController.Instance.GameStart();
 
         }
 
@@ -362,28 +360,37 @@ namespace Familiada
             GameController.Instance.PointsLeft= num;
         }
 
-
-
-
-
-
-            //private void Sort()
-            //{
-            //    foreach(TreeListNode listNode in treeList1.Nodes)
-            //    {
-            //        foreach (TreeListNode subnode in listNode.Nodes)
-            //        {
-            //            if (subnode.NextNode == null) continue;
-            //            int.TryParse(subnode.GetDisplayText(1), out int out1);
-            //            int.TryParse(subnode.NextNode.GetDisplayText(1), out int out2);
-            //            if (out1 >= out2) continue;
-            //            var bufor = subnode.NextNode;
-            //            treeList1.MoveNode(subnode, subnode.NextNode);
-            //            treeList1.MoveNode(bufor, subnode);
-            //        }
-
-            //    }
-            //}
-
+        private void treeList1_CustomDrawNodeIndicator(object sender, CustomDrawNodeIndicatorEventArgs e)
+        {
+            e.ImageIndex = -1;
+            treeList1.IndicatorWidth = 35;
+            if (e.Node.ParentNode != null) return;
+            var parentNodes = treeList1.GetNodeList().Where(x => x.ParentNode == null).ToList();
+            int NodeNumber = (parentNodes.IndexOf(e.Node) + 1);
+            e.Info.DisplayText = NodeNumber.ToString();
+            e.Node.Tag = NodeNumber.ToString();
         }
+
+
+
+
+        //private void Sort()
+        //{
+        //    foreach(TreeListNode listNode in treeList1.Nodes)
+        //    {
+        //        foreach (TreeListNode subnode in listNode.Nodes)
+        //        {
+        //            if (subnode.NextNode == null) continue;
+        //            int.TryParse(subnode.GetDisplayText(1), out int out1);
+        //            int.TryParse(subnode.NextNode.GetDisplayText(1), out int out2);
+        //            if (out1 >= out2) continue;
+        //            var bufor = subnode.NextNode;
+        //            treeList1.MoveNode(subnode, subnode.NextNode);
+        //            treeList1.MoveNode(bufor, subnode);
+        //        }
+
+        //    }
+        //}
+
+    }
 }
