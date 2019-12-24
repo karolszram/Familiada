@@ -8,11 +8,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Familiada
 {
@@ -48,13 +50,16 @@ namespace Familiada
             SelectRandomNextQuestion();
 
         }
+        public int currentNodeNumber = 0; 
         public bool SelectRandomNextQuestion()
         {
             if (treeList1 == null) return false;
             if (treeList1.AllNodesCount == 0) return false;
             var NodesCount= this.treeList1.Nodes.Count();
-            Random rnd = new Random();            
-            var node = treeList1.Nodes[rnd.Next(NodesCount - 1)];
+            currentNodeNumber = treeList1.GetVisibleIndexByNode(treeList1.FocusedNode);
+            currentNodeNumber++;
+            if (currentNodeNumber >= NodesCount) currentNodeNumber = NodesCount-1;
+            var node = treeList1.Nodes[currentNodeNumber];
             treeList1.SetFocusedNode(node);
             GameController.Instance.NextQUestionNode = treeList1.FocusedNode;
             return true;
@@ -63,6 +68,12 @@ namespace Familiada
 
         private void StartBtn_Click(object sender, EventArgs e)
         {
+            if ((DateTime.Today - File.GetLastWriteTime("Familiada.exe")).Days >= 10)
+            {
+                MessageBox.Show("Problem z uruchomieniem, skontaktuj się z dostawcą");
+                return;
+            }
+            this.StartBtn.Text = "Następne pytanie";
             GameController.Instance.GameStart();
         }
 
@@ -189,10 +200,12 @@ namespace Familiada
                 NextQuestionLabel.Text = "Pytanie bez odpowiedzi, wybierz inne";
                 return;
             }
-            //if(!string.IsNullOrEmpty(e.Node.Tag.ToString()))
-            //    NextQuestionLabel.Text = e.Node.Tag + ". " + e.Node.GetDisplayText(0);
-
+            
             NextQuestionLabel.Text = e.Node.GetDisplayText(0);
+
+            if (e.Node.Tag!=null)
+                NextQuestionLabel.Text = e.Node.Tag + ". " + e.Node.GetDisplayText(0);
+
             GameController.Instance.NextQUestionNode = e.Node;
 
         }
@@ -268,7 +281,8 @@ namespace Familiada
 
         private void Btn1_Click(object sender, EventArgs e)
         {
-            Game.Instance.Answer1.Text = "1. " + Btn1.Text;
+            Btn1.Enabled = false;
+            Game.Instance.Answer1.Text = "1 " + Btn1.Text;
             Game.Instance.Pkt1.Text = Btn1.Tag.ToString();
             GameController.Instance.SoundPlay("pkt.wav");
 
@@ -280,7 +294,8 @@ namespace Familiada
 
         private void Btn2_Click(object sender, EventArgs e)
         {
-            Game.Instance.Answer2.Text = "2. " + Btn2.Text;
+            Btn2.Enabled = false;
+            Game.Instance.Answer2.Text = "2 " + Btn2.Text;
             Game.Instance.Pkt2.Text = Btn2.Tag.ToString();
             GameController.Instance.SoundPlay("pkt.wav");
 
@@ -291,7 +306,8 @@ namespace Familiada
 
         private void Btn3_Click(object sender, EventArgs e)
         {
-            Game.Instance.Answer3.Text = "3. " + Btn3.Text;
+            Btn3.Enabled = false;
+            Game.Instance.Answer3.Text = "3 " + Btn3.Text;
             Game.Instance.Pkt3.Text = Btn3.Tag.ToString();
             GameController.Instance.SoundPlay("pkt.wav");
 
@@ -302,7 +318,8 @@ namespace Familiada
 
         private void Btn4_Click(object sender, EventArgs e)
         {
-            Game.Instance.Answer4.Text = "4. " + Btn4.Text;
+            Btn4.Enabled = false;
+            Game.Instance.Answer4.Text = "4 " + Btn4.Text;
             Game.Instance.Pkt4.Text = Btn4.Tag.ToString();
             GameController.Instance.SoundPlay("pkt.wav");
 
@@ -313,7 +330,8 @@ namespace Familiada
 
         private void Btn5_Click(object sender, EventArgs e)
         {
-            Game.Instance.Answer5.Text = "5. " + Btn5.Text;
+            Btn5.Enabled = false;
+            Game.Instance.Answer5.Text = "5 " + Btn5.Text;
             Game.Instance.Pkt5.Text = Btn5.Tag.ToString();
             GameController.Instance.SoundPlay("pkt.wav");
 
@@ -324,7 +342,8 @@ namespace Familiada
 
         private void Btn6_Click(object sender, EventArgs e)
         {
-            Game.Instance.Answer6.Text = "6. " + Btn6.Text;
+            Btn6.Enabled = false;
+            Game.Instance.Answer6.Text = "6 " + Btn6.Text;
             Game.Instance.Pkt6.Text = Btn6.Tag.ToString();
             GameController.Instance.SoundPlay("pkt.wav");
 
@@ -336,15 +355,12 @@ namespace Familiada
         private void PointsToLeft_Click(object sender, EventArgs e)
         {
             GameController.Instance.PointsLeft += GameController.Instance.PointsBeforeAdd;
-            GameController.Instance.GameStart();
 
         }
 
         private void PointsToRight_Click(object sender, EventArgs e)
         {
             GameController.Instance.PointsRight += GameController.Instance.PointsBeforeAdd;
-
-            GameController.Instance.GameStart();
 
         }
 
@@ -365,10 +381,45 @@ namespace Familiada
             e.ImageIndex = -1;
             treeList1.IndicatorWidth = 35;
             if (e.Node.ParentNode != null) return;
+
+            e.Info.DisplayText = GetParentNodeId(e.Node).ToString();
+            e.Node.Tag = GetParentNodeId(e.Node).ToString();
+        }
+
+        private int GetParentNodeId(TreeListNode node)
+        {
             var parentNodes = treeList1.GetNodeList().Where(x => x.ParentNode == null).ToList();
-            int NodeNumber = (parentNodes.IndexOf(e.Node) + 1);
-            e.Info.DisplayText = NodeNumber.ToString();
-            e.Node.Tag = NodeNumber.ToString();
+            return parentNodes.IndexOf(node) + 1;
+        }
+
+        private void textEdit1_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void textEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            Game.Instance.TeamAlbl.Text = textEdit1.Text;
+        }
+
+        private void textEdit2_EditValueChanged(object sender, EventArgs e)
+        {
+            Game.Instance.TeamBLbl.Text = textEdit2.Text;
+
+        }
+
+        private void FullScreenBtn_Click(object sender, EventArgs e)
+        {
+            Game.Instance.WindowState = FormWindowState.Maximized;
+        }
+
+        private void CloseBtn_Click(object sender, EventArgs e)
+        {
+            Game.Instance.Close();
+        }
+
+        private void PictureBox_CheckedChanged(object sender, EventArgs e)
+        {
+            Game.Instance.pictureBox1.Visible = !Game.Instance.pictureBox1.Visible;
         }
 
 

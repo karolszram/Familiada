@@ -29,10 +29,10 @@ namespace Familiada.Classes
                 if (_currentQuestionNode == null)
                 {
                     ControlPanel.Instance.CurrentQuestionLbl.Text = "-";
-                    Game.Instance.CurrentGameQuestionLbl.Text = "-";
+                    //Game.Instance.CurrentGameQuestionLbl.Text = "-";
                 }
                 ControlPanel.Instance.CurrentQuestionLbl.Text = CurrentQuestionNode.Tag +". "+ CurrentQuestionNode.GetDisplayText(0);
-                Game.Instance.CurrentGameQuestionLbl.Text = CurrentQuestionNode.GetDisplayText(0);
+                //Game.Instance.CurrentGameQuestionLbl.Text = CurrentQuestionNode.GetDisplayText(0);
 
             }
             catch{}
@@ -44,7 +44,6 @@ namespace Familiada.Classes
             set { _currentQuestionNode = value;
                     UpdateCurrentLabel();
             } }
-        //public int PointsBeforeAdd { get; set; } = 0;
 
 
         private int _pointsBeforeAdd;
@@ -108,7 +107,6 @@ namespace Familiada.Classes
                 switch (i)
                 {
                     case 1:
-                        ControlPanel.Instance.Btn1.Click += new EventHandler(Btn1Click);
                         ControlPanel.Instance.Btn1.Visible = true;
                         
                         ControlPanel.Instance.Btn1.Tag = CurrentQuestionNode.Nodes[i - 1].GetDisplayText(1); ;
@@ -118,7 +116,6 @@ namespace Familiada.Classes
 
                         break;
                     case 2:
-                        ControlPanel.Instance.Btn2.Click += new EventHandler(Btn2Click);
                         ControlPanel.Instance.Btn2.Visible = true;
                         
                         ControlPanel.Instance.Btn2.Tag = CurrentQuestionNode.Nodes[i - 1].GetDisplayText(1);
@@ -127,7 +124,6 @@ namespace Familiada.Classes
                         Game.Instance.Pkt2.Visible = true;
                         break;
                     case 3:
-                        ControlPanel.Instance.Btn3.Click += new EventHandler(Btn3Click);
                         ControlPanel.Instance.Btn3.Visible = true;
                        
                         ControlPanel.Instance.Btn3.Tag = CurrentQuestionNode.Nodes[i - 1].GetDisplayText(1);
@@ -136,7 +132,6 @@ namespace Familiada.Classes
                         Game.Instance.Pkt3.Visible = true;
                         break;
                     case 4:
-                        ControlPanel.Instance.Btn4.Click += new EventHandler(Btn4Click);
                         ControlPanel.Instance.Btn4.Visible = true;
                         
                         ControlPanel.Instance.Btn4.Tag = CurrentQuestionNode.Nodes[i - 1].GetDisplayText(1);
@@ -145,7 +140,6 @@ namespace Familiada.Classes
                         Game.Instance.Pkt4.Visible = true;
                         break;
                     case 5:
-                        ControlPanel.Instance.Btn5.Click += new EventHandler(Btn5Click);
                         ControlPanel.Instance.Btn5.Visible = true;
                         ControlPanel.Instance.Btn5.Tag = CurrentQuestionNode.Nodes[i - 1].GetDisplayText(1);
                         ControlPanel.Instance.Btn5.Text = CurrentQuestionNode.Nodes[i - 1].GetDisplayText(0);
@@ -153,12 +147,11 @@ namespace Familiada.Classes
                         Game.Instance.Pkt5.Visible = true;
                         break;
                     case 6:
-                        ControlPanel.Instance.Btn6.Click += new EventHandler(Btn6Click);
                         ControlPanel.Instance.Btn6.Visible = true;
                         ControlPanel.Instance.Btn6.Tag = CurrentQuestionNode.Nodes[i - 1].GetDisplayText(1);
                         ControlPanel.Instance.Btn6.Text = CurrentQuestionNode.Nodes[i - 1].GetDisplayText(0);
-                        Game.Instance.Answer1.Visible = true;
-                        Game.Instance.Pkt1.Visible = true;
+                        Game.Instance.Answer6.Visible = true;
+                        Game.Instance.Pkt6.Visible = true;
                         break;
 
                 }
@@ -168,25 +161,7 @@ namespace Familiada.Classes
 
 
 
-        void Btn1Click(object sender, EventArgs e)
-        {
 
-        }
-        void Btn2Click(object sender, EventArgs e)
-        {
-        }
-        void Btn3Click(object sender, EventArgs e)
-        {
-        }
-        void Btn4Click(object sender, EventArgs e)
-        {
-        }
-        void Btn5Click(object sender, EventArgs e)
-        {
-        }
-        void Btn6Click(object sender, EventArgs e)
-        {
-        }
 
         public void SoundPlay(string name)
         {

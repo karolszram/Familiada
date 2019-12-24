@@ -67,6 +67,11 @@
             this.PointsToLeft = new System.Windows.Forms.Button();
             this.PointsToRight = new System.Windows.Forms.Button();
             this.CurrentPointsLbl = new System.Windows.Forms.Label();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.CloseBtn = new System.Windows.Forms.Button();
+            this.FullScreenBtn = new System.Windows.Forms.Button();
+            this.PictureBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeList1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -74,6 +79,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PointsLeft.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PointsRight.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -104,7 +111,7 @@
             this.treeList1.OptionsBehavior.AutoScrollOnSorting = false;
             this.treeList1.OptionsBehavior.EditorShowMode = DevExpress.XtraTreeList.TreeListEditorShowMode.DoubleClick;
             this.treeList1.OptionsSelection.SelectNodesOnRightClick = true;
-            this.treeList1.Size = new System.Drawing.Size(480, 512);
+            this.treeList1.Size = new System.Drawing.Size(430, 642);
             this.treeList1.TabIndex = 0;
             this.treeList1.TreeViewFieldName = "Name";
             this.treeList1.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeList1_FocusedNodeChanged);
@@ -126,7 +133,7 @@
             this.treeListColumn1.OptionsFilter.AllowFilter = false;
             this.treeListColumn1.Visible = true;
             this.treeListColumn1.VisibleIndex = 0;
-            this.treeListColumn1.Width = 399;
+            this.treeListColumn1.Width = 258;
             // 
             // treeListColumn2
             // 
@@ -140,7 +147,7 @@
             this.treeListColumn2.SortOrder = System.Windows.Forms.SortOrder.Descending;
             this.treeListColumn2.Visible = true;
             this.treeListColumn2.VisibleIndex = 1;
-            this.treeListColumn2.Width = 60;
+            this.treeListColumn2.Width = 35;
             // 
             // StartBtn
             // 
@@ -148,9 +155,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.StartBtn.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartBtn.ForeColor = System.Drawing.Color.DarkRed;
-            this.StartBtn.Location = new System.Drawing.Point(12, 530);
+            this.StartBtn.Location = new System.Drawing.Point(12, 660);
             this.StartBtn.Name = "StartBtn";
-            this.StartBtn.Size = new System.Drawing.Size(480, 48);
+            this.StartBtn.Size = new System.Drawing.Size(430, 48);
             this.StartBtn.TabIndex = 1;
             this.StartBtn.Text = "Start!";
             this.StartBtn.UseVisualStyleBackColor = true;
@@ -175,15 +182,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(998, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(948, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 588);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 718);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(998, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(948, 0);
             // 
             // barDockControlLeft
             // 
@@ -191,15 +198,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 588);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 718);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(998, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(948, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 588);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 718);
             // 
             // AddQuestion
             // 
@@ -237,7 +244,7 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(498, 499);
+            this.label1.Location = new System.Drawing.Point(448, 629);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(181, 25);
             this.label1.TabIndex = 6;
@@ -248,7 +255,7 @@
             this.NextQuestionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.NextQuestionLabel.AutoSize = true;
             this.NextQuestionLabel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NextQuestionLabel.Location = new System.Drawing.Point(498, 530);
+            this.NextQuestionLabel.Location = new System.Drawing.Point(448, 660);
             this.NextQuestionLabel.Name = "NextQuestionLabel";
             this.NextQuestionLabel.Size = new System.Drawing.Size(15, 19);
             this.NextQuestionLabel.TabIndex = 12;
@@ -259,7 +266,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(498, 9);
+            this.label2.Location = new System.Drawing.Point(448, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(175, 25);
             this.label2.TabIndex = 17;
@@ -270,7 +277,7 @@
             this.CurrentQuestionLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CurrentQuestionLbl.AutoSize = true;
             this.CurrentQuestionLbl.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrentQuestionLbl.Location = new System.Drawing.Point(499, 34);
+            this.CurrentQuestionLbl.Location = new System.Drawing.Point(449, 34);
             this.CurrentQuestionLbl.Name = "CurrentQuestionLbl";
             this.CurrentQuestionLbl.Size = new System.Drawing.Size(15, 19);
             this.CurrentQuestionLbl.TabIndex = 18;
@@ -281,7 +288,7 @@
             this.WrongBtn1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.WrongBtn1.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WrongBtn1.ForeColor = System.Drawing.Color.Black;
-            this.WrongBtn1.Location = new System.Drawing.Point(498, 170);
+            this.WrongBtn1.Location = new System.Drawing.Point(448, 208);
             this.WrongBtn1.Name = "WrongBtn1";
             this.WrongBtn1.Size = new System.Drawing.Size(60, 60);
             this.WrongBtn1.TabIndex = 23;
@@ -295,7 +302,7 @@
             this.WrongBtn3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.WrongBtn3.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WrongBtn3.ForeColor = System.Drawing.Color.Black;
-            this.WrongBtn3.Location = new System.Drawing.Point(498, 236);
+            this.WrongBtn3.Location = new System.Drawing.Point(448, 274);
             this.WrongBtn3.Name = "WrongBtn3";
             this.WrongBtn3.Size = new System.Drawing.Size(60, 60);
             this.WrongBtn3.TabIndex = 24;
@@ -309,7 +316,7 @@
             this.WrongBtn5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.WrongBtn5.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WrongBtn5.ForeColor = System.Drawing.Color.Black;
-            this.WrongBtn5.Location = new System.Drawing.Point(498, 302);
+            this.WrongBtn5.Location = new System.Drawing.Point(448, 340);
             this.WrongBtn5.Name = "WrongBtn5";
             this.WrongBtn5.Size = new System.Drawing.Size(60, 60);
             this.WrongBtn5.TabIndex = 25;
@@ -323,7 +330,7 @@
             this.ErrorLogLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ErrorLogLbl.AutoSize = true;
             this.ErrorLogLbl.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ErrorLogLbl.Location = new System.Drawing.Point(324, 560);
+            this.ErrorLogLbl.Location = new System.Drawing.Point(324, 690);
             this.ErrorLogLbl.Name = "ErrorLogLbl";
             this.ErrorLogLbl.Size = new System.Drawing.Size(0, 19);
             this.ErrorLogLbl.TabIndex = 30;
@@ -337,7 +344,9 @@
             // Btn1
             // 
             this.Btn1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Btn1.Location = new System.Drawing.Point(564, 104);
+            this.Btn1.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.Btn1.Appearance.Options.UseFont = true;
+            this.Btn1.Location = new System.Drawing.Point(514, 142);
             this.Btn1.Name = "Btn1";
             this.Btn1.Size = new System.Drawing.Size(360, 60);
             this.Btn1.TabIndex = 32;
@@ -349,7 +358,7 @@
             this.WrongBtn6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.WrongBtn6.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WrongBtn6.ForeColor = System.Drawing.Color.Black;
-            this.WrongBtn6.Location = new System.Drawing.Point(930, 302);
+            this.WrongBtn6.Location = new System.Drawing.Point(880, 340);
             this.WrongBtn6.Name = "WrongBtn6";
             this.WrongBtn6.Size = new System.Drawing.Size(60, 60);
             this.WrongBtn6.TabIndex = 35;
@@ -363,7 +372,7 @@
             this.WrongBtn4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.WrongBtn4.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WrongBtn4.ForeColor = System.Drawing.Color.Black;
-            this.WrongBtn4.Location = new System.Drawing.Point(930, 236);
+            this.WrongBtn4.Location = new System.Drawing.Point(880, 274);
             this.WrongBtn4.Name = "WrongBtn4";
             this.WrongBtn4.Size = new System.Drawing.Size(60, 60);
             this.WrongBtn4.TabIndex = 34;
@@ -377,7 +386,7 @@
             this.WrongBtn2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.WrongBtn2.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WrongBtn2.ForeColor = System.Drawing.Color.Black;
-            this.WrongBtn2.Location = new System.Drawing.Point(930, 170);
+            this.WrongBtn2.Location = new System.Drawing.Point(880, 208);
             this.WrongBtn2.Name = "WrongBtn2";
             this.WrongBtn2.Size = new System.Drawing.Size(60, 60);
             this.WrongBtn2.TabIndex = 33;
@@ -389,7 +398,9 @@
             // Btn2
             // 
             this.Btn2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Btn2.Location = new System.Drawing.Point(564, 170);
+            this.Btn2.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.Btn2.Appearance.Options.UseFont = true;
+            this.Btn2.Location = new System.Drawing.Point(514, 208);
             this.Btn2.Name = "Btn2";
             this.Btn2.Size = new System.Drawing.Size(360, 60);
             this.Btn2.TabIndex = 36;
@@ -399,7 +410,9 @@
             // Btn3
             // 
             this.Btn3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Btn3.Location = new System.Drawing.Point(564, 236);
+            this.Btn3.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.Btn3.Appearance.Options.UseFont = true;
+            this.Btn3.Location = new System.Drawing.Point(514, 274);
             this.Btn3.Name = "Btn3";
             this.Btn3.Size = new System.Drawing.Size(360, 60);
             this.Btn3.TabIndex = 37;
@@ -409,7 +422,9 @@
             // Btn4
             // 
             this.Btn4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Btn4.Location = new System.Drawing.Point(564, 302);
+            this.Btn4.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.Btn4.Appearance.Options.UseFont = true;
+            this.Btn4.Location = new System.Drawing.Point(514, 340);
             this.Btn4.Name = "Btn4";
             this.Btn4.Size = new System.Drawing.Size(360, 60);
             this.Btn4.TabIndex = 38;
@@ -419,7 +434,9 @@
             // Btn5
             // 
             this.Btn5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Btn5.Location = new System.Drawing.Point(564, 368);
+            this.Btn5.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.Btn5.Appearance.Options.UseFont = true;
+            this.Btn5.Location = new System.Drawing.Point(514, 406);
             this.Btn5.Name = "Btn5";
             this.Btn5.Size = new System.Drawing.Size(360, 60);
             this.Btn5.TabIndex = 39;
@@ -429,7 +446,9 @@
             // Btn6
             // 
             this.Btn6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Btn6.Location = new System.Drawing.Point(564, 434);
+            this.Btn6.Appearance.Font = new System.Drawing.Font("Tahoma", 14F);
+            this.Btn6.Appearance.Options.UseFont = true;
+            this.Btn6.Location = new System.Drawing.Point(514, 472);
             this.Btn6.Name = "Btn6";
             this.Btn6.Size = new System.Drawing.Size(360, 60);
             this.Btn6.TabIndex = 40;
@@ -440,7 +459,7 @@
             // 
             this.PointsLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PointsLeft.EditValue = "0";
-            this.PointsLeft.Location = new System.Drawing.Point(498, 66);
+            this.PointsLeft.Location = new System.Drawing.Point(448, 66);
             this.PointsLeft.MenuManager = this.barManager1;
             this.PointsLeft.Name = "PointsLeft";
             this.PointsLeft.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -456,7 +475,7 @@
             // 
             this.PointsRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PointsRight.EditValue = "0";
-            this.PointsRight.Location = new System.Drawing.Point(930, 66);
+            this.PointsRight.Location = new System.Drawing.Point(880, 66);
             this.PointsRight.MenuManager = this.barManager1;
             this.PointsRight.Name = "PointsRight";
             this.PointsRight.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -473,7 +492,7 @@
             this.PointsToLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PointsToLeft.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PointsToLeft.ForeColor = System.Drawing.Color.Green;
-            this.PointsToLeft.Location = new System.Drawing.Point(498, 104);
+            this.PointsToLeft.Location = new System.Drawing.Point(448, 142);
             this.PointsToLeft.Name = "PointsToLeft";
             this.PointsToLeft.Size = new System.Drawing.Size(60, 60);
             this.PointsToLeft.TabIndex = 57;
@@ -487,7 +506,7 @@
             this.PointsToRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PointsToRight.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PointsToRight.ForeColor = System.Drawing.Color.Green;
-            this.PointsToRight.Location = new System.Drawing.Point(930, 104);
+            this.PointsToRight.Location = new System.Drawing.Point(880, 142);
             this.PointsToRight.Name = "PointsToRight";
             this.PointsToRight.Size = new System.Drawing.Size(60, 60);
             this.PointsToRight.TabIndex = 58;
@@ -501,17 +520,104 @@
             this.CurrentPointsLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CurrentPointsLbl.AutoSize = true;
             this.CurrentPointsLbl.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrentPointsLbl.Location = new System.Drawing.Point(715, 69);
+            this.CurrentPointsLbl.Location = new System.Drawing.Point(665, 73);
             this.CurrentPointsLbl.Name = "CurrentPointsLbl";
             this.CurrentPointsLbl.Size = new System.Drawing.Size(23, 25);
             this.CurrentPointsLbl.TabIndex = 63;
             this.CurrentPointsLbl.Text = "0";
+            this.CurrentPointsLbl.Visible = false;
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textEdit1.EditValue = "";
+            this.textEdit1.Location = new System.Drawing.Point(448, 104);
+            this.textEdit1.MenuManager = this.barManager1;
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEdit1.Properties.Appearance.Options.UseFont = true;
+            this.textEdit1.Properties.Mask.EditMask = "d";
+            this.textEdit1.Properties.NullText = "Drużyna A";
+            this.textEdit1.Properties.NullValuePrompt = "Drużyna A";
+            this.textEdit1.Properties.NullValuePromptShowForEmptyValue = true;
+            this.textEdit1.Properties.ShowNullValuePromptWhenFocused = true;
+            this.textEdit1.ShowToolTips = false;
+            this.textEdit1.Size = new System.Drawing.Size(240, 32);
+            this.textEdit1.TabIndex = 68;
+            this.textEdit1.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged);
+            this.textEdit1.TextChanged += new System.EventHandler(this.textEdit1_TextChanged);
+            // 
+            // textEdit2
+            // 
+            this.textEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textEdit2.EditValue = "";
+            this.textEdit2.Location = new System.Drawing.Point(697, 104);
+            this.textEdit2.MenuManager = this.barManager1;
+            this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEdit2.Properties.Appearance.Options.UseFont = true;
+            this.textEdit2.Properties.Mask.EditMask = "d";
+            this.textEdit2.Properties.NullValuePrompt = "Drużyna B";
+            this.textEdit2.Properties.NullValuePromptShowForEmptyValue = true;
+            this.textEdit2.Properties.ShowNullValuePromptWhenFocused = true;
+            this.textEdit2.Size = new System.Drawing.Size(243, 32);
+            this.textEdit2.TabIndex = 69;
+            this.textEdit2.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
+            // 
+            // CloseBtn
+            // 
+            this.CloseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseBtn.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
+            this.CloseBtn.ForeColor = System.Drawing.Color.Black;
+            this.CloseBtn.Location = new System.Drawing.Point(801, 566);
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.Size = new System.Drawing.Size(135, 60);
+            this.CloseBtn.TabIndex = 70;
+            this.CloseBtn.Text = "Zamknij";
+            this.CloseBtn.UseVisualStyleBackColor = true;
+            this.CloseBtn.Visible = false;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            // 
+            // FullScreenBtn
+            // 
+            this.FullScreenBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FullScreenBtn.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
+            this.FullScreenBtn.ForeColor = System.Drawing.Color.Black;
+            this.FullScreenBtn.Location = new System.Drawing.Point(577, 566);
+            this.FullScreenBtn.Name = "FullScreenBtn";
+            this.FullScreenBtn.Size = new System.Drawing.Size(218, 60);
+            this.FullScreenBtn.TabIndex = 71;
+            this.FullScreenBtn.Text = "FullScreen";
+            this.FullScreenBtn.UseVisualStyleBackColor = true;
+            this.FullScreenBtn.Visible = false;
+            this.FullScreenBtn.Click += new System.EventHandler(this.FullScreenBtn_Click);
+            // 
+            // PictureBox
+            // 
+            this.PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PictureBox.AutoSize = true;
+            this.PictureBox.Checked = true;
+            this.PictureBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.PictureBox.Font = new System.Drawing.Font("Tahoma", 20F);
+            this.PictureBox.ForeColor = System.Drawing.Color.White;
+            this.PictureBox.Location = new System.Drawing.Point(453, 579);
+            this.PictureBox.Name = "PictureBox";
+            this.PictureBox.Size = new System.Drawing.Size(118, 37);
+            this.PictureBox.TabIndex = 76;
+            this.PictureBox.Text = "Zdjęcie";
+            this.PictureBox.UseVisualStyleBackColor = true;
+            this.PictureBox.CheckedChanged += new System.EventHandler(this.PictureBox_CheckedChanged);
             // 
             // ControlPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(998, 588);
+            this.ClientSize = new System.Drawing.Size(948, 718);
+            this.Controls.Add(this.PictureBox);
+            this.Controls.Add(this.FullScreenBtn);
+            this.Controls.Add(this.CloseBtn);
+            this.Controls.Add(this.textEdit2);
+            this.Controls.Add(this.textEdit1);
             this.Controls.Add(this.CurrentPointsLbl);
             this.Controls.Add(this.PointsToRight);
             this.Controls.Add(this.PointsToLeft);
@@ -540,7 +646,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.MinimumSize = new System.Drawing.Size(825, 620);
+            this.MinimumSize = new System.Drawing.Size(950, 750);
             this.Name = "ControlPanel";
             this.ShowIcon = false;
             this.Text = "Panel kontrolny";
@@ -551,6 +657,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PointsLeft.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PointsRight.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -596,5 +704,10 @@
         public System.Windows.Forms.Button PointsToRight;
         public System.Windows.Forms.Button PointsToLeft;
         public System.Windows.Forms.Label CurrentPointsLbl;
+        public DevExpress.XtraEditors.TextEdit textEdit2;
+        public DevExpress.XtraEditors.TextEdit textEdit1;
+        public System.Windows.Forms.Button FullScreenBtn;
+        public System.Windows.Forms.Button CloseBtn;
+        public System.Windows.Forms.CheckBox PictureBox;
     }
 }
