@@ -161,13 +161,13 @@ namespace Familiada.Classes
 
 
 
+         public System.Media.SoundPlayer player = new System.Media.SoundPlayer();
 
-
+        
         public void SoundPlay(string name)
         {
             try
             {
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer();
                 player.SoundLocation = name;
                 player.Play();
             }

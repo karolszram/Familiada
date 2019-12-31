@@ -272,7 +272,7 @@
             this.TeamBLbl.BackColor = System.Drawing.Color.Transparent;
             this.TeamBLbl.Font = new System.Drawing.Font("Familiada", 75.1F);
             this.TeamBLbl.ForeColor = System.Drawing.Color.Yellow;
-            this.TeamBLbl.Location = new System.Drawing.Point(959, 208);
+            this.TeamBLbl.Location = new System.Drawing.Point(958, 206);
             this.TeamBLbl.Name = "TeamBLbl";
             this.TeamBLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.TeamBLbl.Size = new System.Drawing.Size(944, 90);

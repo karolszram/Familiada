@@ -3,6 +3,7 @@ using DevExpress.XtraTreeList.Columns;
 using DevExpress.XtraTreeList.Nodes;
 using Familiada.Classes;
 using Familiada.Forms;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -68,13 +69,16 @@ namespace Familiada
 
         private void StartBtn_Click(object sender, EventArgs e)
         {
-            if ((DateTime.Today - File.GetLastWriteTime("Familiada.exe")).Days >= 10)
+
+            if (Registry.GetValue("HKEY_CURRENT_USER\\Software\\Familiada", "", true) == null)
             {
-                MessageBox.Show("Problem z uruchomieniem, skontaktuj się z dostawcą");
+                LicForm licForm = new LicForm();
+                licForm.Show();
                 return;
             }
-            this.StartBtn.Text = "Następne pytanie";
             GameController.Instance.GameStart();
+            this.StartBtn.Text = "Następne pytanie";
+
         }
 
 
@@ -417,9 +421,26 @@ namespace Familiada
             Game.Instance.Close();
         }
 
-        private void PictureBox_CheckedChanged(object sender, EventArgs e)
+
+        private void PictureBtn_Click(object sender, EventArgs e)
         {
             Game.Instance.pictureBox1.Visible = !Game.Instance.pictureBox1.Visible;
+
+        }
+
+        private void MusicStartBtn_Click(object sender, EventArgs e)
+        {
+            GameController.Instance.SoundPlay("start.wav");
+        }
+
+        private void MusicEndBtn_Click(object sender, EventArgs e)
+        {
+            GameController.Instance.SoundPlay("koniec.wav");
+        }
+
+        private void MusicStopBtn_Click(object sender, EventArgs e)
+        {
+            GameController.Instance.player.Stop();
         }
 
 

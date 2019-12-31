@@ -52,7 +52,7 @@ namespace Familiada.Forms
         private void Game_FormClosing(object sender, FormClosingEventArgs e)
         {
             instance = null;
-            ControlPanel.Instance.StartBtn.Text = "Start";
+            ControlPanel.Instance.StartBtn.Text = "Start!";
             ControlPanel.Instance.StartBtn.Enabled = true;
             GameController.Instance.CurrentQuestionNode = null;
             ControlPanel.Instance.Btn1.Visible = false;
@@ -72,16 +72,22 @@ namespace Familiada.Forms
             ControlPanel.Instance.PointsToLeft.Visible = false;
             ControlPanel.Instance.PointsToRight.Visible = false;
             ControlPanel.Instance.CloseBtn.Visible = false;
+            ControlPanel.Instance.PictureBtn.Visible = false;
             ControlPanel.Instance.FullScreenBtn.Visible = false;
             ControlPanel.Instance.CurrentPointsLbl.Visible = false;
+            ControlPanel.Instance.MusicEndBtn.Visible = false;
+            ControlPanel.Instance.MusicStartBtn.Visible = false;
+            ControlPanel.Instance.MusicStopBtn.Visible = false;
         }
         public void ClearBeforeNext()
         {
             TeamAlbl.Text = ControlPanel.Instance.textEdit1.Text;
             TeamBLbl.Text = ControlPanel.Instance.textEdit2.Text;
             pictureBox1.Dock = DockStyle.Fill;
-            if (ControlPanel.Instance.PictureBox.Checked) pictureBox1.Visible = true;
-            else pictureBox1.Visible = false;
+            if(ControlPanel.Instance.StartBtn.Text=="Start!")
+            pictureBox1.Visible = true;
+            else
+                pictureBox1.Visible = false;
             ControlPanel.Instance.CurrentPointsLbl.Visible = true ;
             GameController.Instance.PointsBeforeAdd = 0;
             ControlPanel.Instance.Btn1.Visible = false;
@@ -96,6 +102,10 @@ namespace Familiada.Forms
             ControlPanel.Instance.Btn4.Enabled= true;
             ControlPanel.Instance.Btn5.Enabled= true;
             ControlPanel.Instance.Btn6.Enabled= true;
+            ControlPanel.Instance.MusicEndBtn.Visible = true;
+            ControlPanel.Instance.MusicStartBtn.Visible = true;
+            ControlPanel.Instance.MusicStopBtn.Visible = true;
+            ControlPanel.Instance.PictureBtn.Visible = true;
             ControlPanel.Instance.CloseBtn.Visible = true;
             ControlPanel.Instance.FullScreenBtn.Visible = true;
 

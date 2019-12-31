@@ -71,7 +71,10 @@
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.CloseBtn = new System.Windows.Forms.Button();
             this.FullScreenBtn = new System.Windows.Forms.Button();
-            this.PictureBox = new System.Windows.Forms.CheckBox();
+            this.PictureBtn = new System.Windows.Forms.Button();
+            this.MusicStartBtn = new System.Windows.Forms.Button();
+            this.MusicEndBtn = new System.Windows.Forms.Button();
+            this.MusicStopBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeList1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -567,11 +570,11 @@
             // CloseBtn
             // 
             this.CloseBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CloseBtn.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
+            this.CloseBtn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.CloseBtn.ForeColor = System.Drawing.Color.Black;
-            this.CloseBtn.Location = new System.Drawing.Point(801, 566);
+            this.CloseBtn.Location = new System.Drawing.Point(852, 566);
             this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(135, 60);
+            this.CloseBtn.Size = new System.Drawing.Size(88, 60);
             this.CloseBtn.TabIndex = 70;
             this.CloseBtn.Text = "Zamknij";
             this.CloseBtn.UseVisualStyleBackColor = true;
@@ -581,39 +584,82 @@
             // FullScreenBtn
             // 
             this.FullScreenBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FullScreenBtn.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
+            this.FullScreenBtn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.FullScreenBtn.ForeColor = System.Drawing.Color.Black;
-            this.FullScreenBtn.Location = new System.Drawing.Point(577, 566);
+            this.FullScreenBtn.Location = new System.Drawing.Point(524, 566);
             this.FullScreenBtn.Name = "FullScreenBtn";
-            this.FullScreenBtn.Size = new System.Drawing.Size(218, 60);
+            this.FullScreenBtn.Size = new System.Drawing.Size(101, 60);
             this.FullScreenBtn.TabIndex = 71;
             this.FullScreenBtn.Text = "FullScreen";
             this.FullScreenBtn.UseVisualStyleBackColor = true;
             this.FullScreenBtn.Visible = false;
             this.FullScreenBtn.Click += new System.EventHandler(this.FullScreenBtn_Click);
             // 
-            // PictureBox
+            // PictureBtn
             // 
-            this.PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PictureBox.AutoSize = true;
-            this.PictureBox.Checked = true;
-            this.PictureBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.PictureBox.Font = new System.Drawing.Font("Tahoma", 20F);
-            this.PictureBox.ForeColor = System.Drawing.Color.White;
-            this.PictureBox.Location = new System.Drawing.Point(453, 579);
-            this.PictureBox.Name = "PictureBox";
-            this.PictureBox.Size = new System.Drawing.Size(118, 37);
-            this.PictureBox.TabIndex = 76;
-            this.PictureBox.Text = "Zdjęcie";
-            this.PictureBox.UseVisualStyleBackColor = true;
-            this.PictureBox.CheckedChanged += new System.EventHandler(this.PictureBox_CheckedChanged);
+            this.PictureBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PictureBtn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.PictureBtn.ForeColor = System.Drawing.Color.Black;
+            this.PictureBtn.Location = new System.Drawing.Point(448, 566);
+            this.PictureBtn.Name = "PictureBtn";
+            this.PictureBtn.Size = new System.Drawing.Size(70, 60);
+            this.PictureBtn.TabIndex = 81;
+            this.PictureBtn.Text = "Obraz";
+            this.PictureBtn.UseVisualStyleBackColor = true;
+            this.PictureBtn.Visible = false;
+            this.PictureBtn.Click += new System.EventHandler(this.PictureBtn_Click);
+            // 
+            // MusicStartBtn
+            // 
+            this.MusicStartBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MusicStartBtn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.MusicStartBtn.ForeColor = System.Drawing.Color.Black;
+            this.MusicStartBtn.Location = new System.Drawing.Point(631, 566);
+            this.MusicStartBtn.Name = "MusicStartBtn";
+            this.MusicStartBtn.Size = new System.Drawing.Size(70, 60);
+            this.MusicStartBtn.TabIndex = 82;
+            this.MusicStartBtn.Text = "Start";
+            this.MusicStartBtn.UseVisualStyleBackColor = true;
+            this.MusicStartBtn.Visible = false;
+            this.MusicStartBtn.Click += new System.EventHandler(this.MusicStartBtn_Click);
+            // 
+            // MusicEndBtn
+            // 
+            this.MusicEndBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MusicEndBtn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.MusicEndBtn.ForeColor = System.Drawing.Color.Black;
+            this.MusicEndBtn.Location = new System.Drawing.Point(707, 566);
+            this.MusicEndBtn.Name = "MusicEndBtn";
+            this.MusicEndBtn.Size = new System.Drawing.Size(77, 60);
+            this.MusicEndBtn.TabIndex = 83;
+            this.MusicEndBtn.Text = "Koniec";
+            this.MusicEndBtn.UseVisualStyleBackColor = true;
+            this.MusicEndBtn.Visible = false;
+            this.MusicEndBtn.Click += new System.EventHandler(this.MusicEndBtn_Click);
+            // 
+            // MusicStopBtn
+            // 
+            this.MusicStopBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MusicStopBtn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.MusicStopBtn.ForeColor = System.Drawing.Color.Black;
+            this.MusicStopBtn.Location = new System.Drawing.Point(790, 566);
+            this.MusicStopBtn.Name = "MusicStopBtn";
+            this.MusicStopBtn.Size = new System.Drawing.Size(56, 60);
+            this.MusicStopBtn.TabIndex = 88;
+            this.MusicStopBtn.Text = "Stop";
+            this.MusicStopBtn.UseVisualStyleBackColor = true;
+            this.MusicStopBtn.Visible = false;
+            this.MusicStopBtn.Click += new System.EventHandler(this.MusicStopBtn_Click);
             // 
             // ControlPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 718);
-            this.Controls.Add(this.PictureBox);
+            this.Controls.Add(this.MusicStopBtn);
+            this.Controls.Add(this.MusicEndBtn);
+            this.Controls.Add(this.MusicStartBtn);
+            this.Controls.Add(this.PictureBtn);
             this.Controls.Add(this.FullScreenBtn);
             this.Controls.Add(this.CloseBtn);
             this.Controls.Add(this.textEdit2);
@@ -708,6 +754,9 @@
         public DevExpress.XtraEditors.TextEdit textEdit1;
         public System.Windows.Forms.Button FullScreenBtn;
         public System.Windows.Forms.Button CloseBtn;
-        public System.Windows.Forms.CheckBox PictureBox;
+        public System.Windows.Forms.Button PictureBtn;
+        public System.Windows.Forms.Button MusicEndBtn;
+        public System.Windows.Forms.Button MusicStartBtn;
+        public System.Windows.Forms.Button MusicStopBtn;
     }
 }
