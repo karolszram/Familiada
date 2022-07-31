@@ -30,6 +30,7 @@ namespace Familiada.Classes
                 {
                     ControlPanel.Instance.CurrentQuestionLbl.Text = "-";
                     //Game.Instance.CurrentGameQuestionLbl.Text = "-";
+                    return;
                 }
                 ControlPanel.Instance.CurrentQuestionLbl.Text = CurrentQuestionNode.Tag +". "+ CurrentQuestionNode.GetDisplayText(0);
                 //Game.Instance.CurrentGameQuestionLbl.Text = CurrentQuestionNode.GetDisplayText(0);

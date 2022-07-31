@@ -443,6 +443,59 @@ namespace Familiada
             GameController.Instance.player.Stop();
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            Game.Instance.Question1Lbl.Visible =! Game.Instance.Question1Lbl.Visible;
+            Game.Instance.Question2Lbl.Visible = !Game.Instance.Question2Lbl.Visible;
+
+
+        }
+
+        private void CurrentQuestionLbl_TextChanged(object sender, EventArgs e)
+        {
+            if (Game.Instance == null) return;            
+
+            if (GameController.Instance.CurrentQuestionNode == null)
+            {
+                Game.Instance.Question1Lbl.Text = "-";
+                Game.Instance.Question1Lbl.Text = "";
+
+                return;
+            }
+            string textToShow = GameController.Instance.CurrentQuestionNode.GetDisplayText(0);
+            if(textToShow.Length<= 24)
+            {
+                Game.Instance.Question1Lbl.Text = textToShow.Replace(" ", "   ");
+                Game.Instance.Question2Lbl.Text = "";
+            }
+
+            else
+            {
+                string line1 = string.Empty;
+                string line2 = string.Empty;
+                string[] splitedText = textToShow.Split(' ');
+                foreach(string word in splitedText)
+                {
+                    if (line1.Length + word.Length <= 24 && line2.Length == 0)
+                        line1 += word + " ";
+                    else
+                    {
+                        if (line2.Length == 0 && word == " ") continue;
+                        line2 += word + " ";
+                    }
+                        
+                }
+                Game.Instance.Question1Lbl.Text = line1.Replace(" ", "   ");
+                Game.Instance.Question2Lbl.Text = line2.Replace(" ", "   ");
+
+            }
+
+
+
+
+
+        }
+
 
 
 

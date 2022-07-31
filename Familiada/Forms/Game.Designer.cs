@@ -52,6 +52,8 @@
             this.Wrong4 = new System.Windows.Forms.Label();
             this.Wrong2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Question1Lbl = new System.Windows.Forms.Label();
+            this.Question2Lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +62,7 @@
             this.Answer1.BackColor = System.Drawing.Color.Transparent;
             this.Answer1.Font = new System.Drawing.Font("Familiada", 57.2F);
             this.Answer1.ForeColor = System.Drawing.Color.Yellow;
-            this.Answer1.Location = new System.Drawing.Point(318, 466);
+            this.Answer1.Location = new System.Drawing.Point(318, 387);
             this.Answer1.Name = "Answer1";
             this.Answer1.Size = new System.Drawing.Size(1164, 67);
             this.Answer1.TabIndex = 7;
@@ -73,7 +75,7 @@
             this.Answer2.BackColor = System.Drawing.Color.Transparent;
             this.Answer2.Font = new System.Drawing.Font("Familiada", 57.1F);
             this.Answer2.ForeColor = System.Drawing.Color.Yellow;
-            this.Answer2.Location = new System.Drawing.Point(318, 543);
+            this.Answer2.Location = new System.Drawing.Point(318, 464);
             this.Answer2.Name = "Answer2";
             this.Answer2.Size = new System.Drawing.Size(1164, 67);
             this.Answer2.TabIndex = 8;
@@ -86,7 +88,7 @@
             this.Answer3.BackColor = System.Drawing.Color.Transparent;
             this.Answer3.Font = new System.Drawing.Font("Familiada", 57.1F);
             this.Answer3.ForeColor = System.Drawing.Color.Yellow;
-            this.Answer3.Location = new System.Drawing.Point(318, 622);
+            this.Answer3.Location = new System.Drawing.Point(318, 543);
             this.Answer3.Name = "Answer3";
             this.Answer3.Size = new System.Drawing.Size(1164, 67);
             this.Answer3.TabIndex = 9;
@@ -99,7 +101,7 @@
             this.Answer4.BackColor = System.Drawing.Color.Transparent;
             this.Answer4.Font = new System.Drawing.Font("Familiada", 57.1F);
             this.Answer4.ForeColor = System.Drawing.Color.Yellow;
-            this.Answer4.Location = new System.Drawing.Point(318, 699);
+            this.Answer4.Location = new System.Drawing.Point(318, 620);
             this.Answer4.Name = "Answer4";
             this.Answer4.Size = new System.Drawing.Size(1164, 67);
             this.Answer4.TabIndex = 10;
@@ -112,7 +114,7 @@
             this.Answer5.BackColor = System.Drawing.Color.Transparent;
             this.Answer5.Font = new System.Drawing.Font("Familiada", 57.1F);
             this.Answer5.ForeColor = System.Drawing.Color.Yellow;
-            this.Answer5.Location = new System.Drawing.Point(318, 776);
+            this.Answer5.Location = new System.Drawing.Point(318, 697);
             this.Answer5.Name = "Answer5";
             this.Answer5.Size = new System.Drawing.Size(1164, 67);
             this.Answer5.TabIndex = 11;
@@ -125,7 +127,7 @@
             this.Answer6.BackColor = System.Drawing.Color.Transparent;
             this.Answer6.Font = new System.Drawing.Font("Familiada", 57.1F);
             this.Answer6.ForeColor = System.Drawing.Color.Yellow;
-            this.Answer6.Location = new System.Drawing.Point(318, 853);
+            this.Answer6.Location = new System.Drawing.Point(318, 777);
             this.Answer6.Name = "Answer6";
             this.Answer6.Size = new System.Drawing.Size(1164, 67);
             this.Answer6.TabIndex = 12;
@@ -139,7 +141,7 @@
             this.Pkt1.BackColor = System.Drawing.Color.Transparent;
             this.Pkt1.Font = new System.Drawing.Font("Familiada", 57.001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Pkt1.ForeColor = System.Drawing.Color.Yellow;
-            this.Pkt1.Location = new System.Drawing.Point(1475, 466);
+            this.Pkt1.Location = new System.Drawing.Point(1475, 387);
             this.Pkt1.Name = "Pkt1";
             this.Pkt1.Size = new System.Drawing.Size(145, 67);
             this.Pkt1.TabIndex = 13;
@@ -153,7 +155,7 @@
             this.Pkt2.BackColor = System.Drawing.Color.Transparent;
             this.Pkt2.Font = new System.Drawing.Font("Familiada", 57.1F);
             this.Pkt2.ForeColor = System.Drawing.Color.Yellow;
-            this.Pkt2.Location = new System.Drawing.Point(1475, 543);
+            this.Pkt2.Location = new System.Drawing.Point(1475, 464);
             this.Pkt2.Name = "Pkt2";
             this.Pkt2.Size = new System.Drawing.Size(145, 67);
             this.Pkt2.TabIndex = 14;
@@ -167,7 +169,7 @@
             this.Pkt3.BackColor = System.Drawing.Color.Transparent;
             this.Pkt3.Font = new System.Drawing.Font("Familiada", 57.1F);
             this.Pkt3.ForeColor = System.Drawing.Color.Yellow;
-            this.Pkt3.Location = new System.Drawing.Point(1475, 622);
+            this.Pkt3.Location = new System.Drawing.Point(1475, 543);
             this.Pkt3.Name = "Pkt3";
             this.Pkt3.Size = new System.Drawing.Size(145, 67);
             this.Pkt3.TabIndex = 15;
@@ -181,7 +183,7 @@
             this.Pkt4.BackColor = System.Drawing.Color.Transparent;
             this.Pkt4.Font = new System.Drawing.Font("Familiada", 57.1F);
             this.Pkt4.ForeColor = System.Drawing.Color.Yellow;
-            this.Pkt4.Location = new System.Drawing.Point(1475, 699);
+            this.Pkt4.Location = new System.Drawing.Point(1475, 620);
             this.Pkt4.Name = "Pkt4";
             this.Pkt4.Size = new System.Drawing.Size(145, 67);
             this.Pkt4.TabIndex = 16;
@@ -195,7 +197,7 @@
             this.Pkt5.BackColor = System.Drawing.Color.Transparent;
             this.Pkt5.Font = new System.Drawing.Font("Familiada", 57.1F);
             this.Pkt5.ForeColor = System.Drawing.Color.Yellow;
-            this.Pkt5.Location = new System.Drawing.Point(1475, 776);
+            this.Pkt5.Location = new System.Drawing.Point(1475, 697);
             this.Pkt5.Name = "Pkt5";
             this.Pkt5.Size = new System.Drawing.Size(145, 67);
             this.Pkt5.TabIndex = 17;
@@ -209,7 +211,7 @@
             this.Pkt6.BackColor = System.Drawing.Color.Transparent;
             this.Pkt6.Font = new System.Drawing.Font("Familiada", 57.1F);
             this.Pkt6.ForeColor = System.Drawing.Color.Yellow;
-            this.Pkt6.Location = new System.Drawing.Point(1475, 855);
+            this.Pkt6.Location = new System.Drawing.Point(1475, 778);
             this.Pkt6.Name = "Pkt6";
             this.Pkt6.Size = new System.Drawing.Size(145, 67);
             this.Pkt6.TabIndex = 18;
@@ -366,14 +368,42 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Visible = false;
             // 
+            // Question1Lbl
+            // 
+            this.Question1Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.Question1Lbl.Enabled = false;
+            this.Question1Lbl.Font = new System.Drawing.Font("Familiada", 57.2F);
+            this.Question1Lbl.ForeColor = System.Drawing.Color.Yellow;
+            this.Question1Lbl.Location = new System.Drawing.Point(261, 856);
+            this.Question1Lbl.Name = "Question1Lbl";
+            this.Question1Lbl.Size = new System.Drawing.Size(1428, 68);
+            this.Question1Lbl.TabIndex = 31;
+            this.Question1Lbl.Text = "QWERTYUIOPASDFGHJKLZXCVBNMQWE";
+            this.Question1Lbl.Visible = false;
+            // 
+            // Question2Lbl
+            // 
+            this.Question2Lbl.BackColor = System.Drawing.Color.Transparent;
+            this.Question2Lbl.Enabled = false;
+            this.Question2Lbl.Font = new System.Drawing.Font("Familiada", 57.2F);
+            this.Question2Lbl.ForeColor = System.Drawing.Color.Yellow;
+            this.Question2Lbl.Location = new System.Drawing.Point(261, 934);
+            this.Question2Lbl.Name = "Question2Lbl";
+            this.Question2Lbl.Size = new System.Drawing.Size(1428, 68);
+            this.Question2Lbl.TabIndex = 32;
+            this.Question2Lbl.Text = "QWERTYUIOPASDFGHJKLZXCVBNMQWE";
+            this.Question2Lbl.Visible = false;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Familiada.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.Question2Lbl);
             this.Controls.Add(this.Wrong6);
+            this.Controls.Add(this.Question1Lbl);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Wrong4);
             this.Controls.Add(this.Wrong2);
             this.Controls.Add(this.Wrong5);
@@ -436,5 +466,7 @@
         public System.Windows.Forms.Label Wrong4;
         public System.Windows.Forms.Label Wrong2;
         public System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Label Question1Lbl;
+        public System.Windows.Forms.Label Question2Lbl;
     }
 }
